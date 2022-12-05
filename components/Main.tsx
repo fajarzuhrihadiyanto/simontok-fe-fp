@@ -8,12 +8,12 @@ interface MainViewProps {
 
 export const MainView:React.FC<MainViewProps> = ({ children }) => {
     return (
-        <>
-            <div className="flex h-screen">
-                <div className="flex items-center w-1/2 bg-white pl-40 pr-8 py-16">
-                    <div className="w-full">
+        <div>
+            <div className="flex flex-col h-screen md:flex-row">
+                <div className="items-center hidden w-1/2 px-8 py-16 bg-white md:flex">
+                    <div className="w-fit">
                         <a href="/">
-                            <h1 className="text-8xl font-black font-roboto italic text-transparent bg-clip-text bg-gradient-to-b from-primary to-secondary">
+                            <h1 className="italic font-black text-transparent md:text-6xl xl:text-8xl font-roboto bg-clip-text bg-gradient-to-b from-primary to-secondary">
                                 Simontok
                             </h1>
                         </a>
@@ -32,12 +32,18 @@ export const MainView:React.FC<MainViewProps> = ({ children }) => {
                         <SocialMedia />
                     </div>
                 </div>
-                <div className="flex items-center bg-light w-1/2 py-16 px-40 h-full">
-                    <div className="bg-white w-full py-4 px-2 rounded-xl">
+                <div className="flex justify-center w-full h-full md:w-1/2 2xl:py-16 2xl:px-40 bg-light">
+                    
+                    <div className="flex flex-col items-center justify-center w-full h-full px-2 py-4 bg-white md:w-fit rounded-xl">
+                        <a href="/">
+                            <h1 className="text-4xl italic font-black text-transparent md:hidden xl:text-8xl font-roboto bg-clip-text bg-gradient-to-b from-primary to-secondary">
+                                Simontok
+                            </h1>
+                        </a>
                         { children }
                     </div>
                 </div>
             </div>
-        </>
+        </div>
     )
 }
