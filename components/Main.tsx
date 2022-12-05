@@ -10,7 +10,7 @@ export const MainView:React.FC<MainViewProps> = ({ children }) => {
     return (
         <div>
             <div className="flex flex-col h-screen md:flex-row">
-                <div className="items-center hidden w-1/2 px-8 py-16 bg-white md:flex">
+                <div className="items-center justify-center hidden w-1/2 px-8 py-16 bg-white md:flex">
                     <div className="w-fit">
                         <a href="/">
                             <h1 className="italic font-black text-transparent md:text-6xl xl:text-8xl font-roboto bg-clip-text bg-gradient-to-b from-primary to-secondary">
