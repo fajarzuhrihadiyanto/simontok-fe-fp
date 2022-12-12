@@ -13,7 +13,7 @@ module.exports = {
         secondary: '#FA896B',
         light: '#F2E8FF',
         slight: '#FEF3F1',
-        'forhoverprimary': '#201466'
+        forhoverprimary: '#201466'
       }
     },
     fontFamily: {
