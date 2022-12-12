@@ -13,8 +13,8 @@ export const LeftSidebar = () => {
                 <Sidebar.Item href="#">Tambah Marketplace</Sidebar.Item>
               </Sidebar.Collapse>
               <Sidebar.Collapse label="Stok Produk">
-                <Sidebar.Item href="#">Lihat Stok</Sidebar.Item>
-                <Sidebar.Item href="#">Tambah Produk</Sidebar.Item>
+                <Sidebar.Item href="/stok">Lihat Stok</Sidebar.Item>
+                <Sidebar.Item href="/stok/tambahproduk">Tambah Produk</Sidebar.Item>
               </Sidebar.Collapse>
               <Sidebar.Item href="#">Laporan</Sidebar.Item>
               <Sidebar.Item href="#">Statistik</Sidebar.Item>
