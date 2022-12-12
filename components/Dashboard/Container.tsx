@@ -8,7 +8,7 @@ export const Container: React.FC<ContainerProps> = ({
     children
 }) => {
     return (
-        <div className="bg-white rounded-md mt-4 w-full h-full">
+        <div className="bg-white rounded-md mt-4 w-full h-full py-4 px-8">
             { children }
         </div>
     )
