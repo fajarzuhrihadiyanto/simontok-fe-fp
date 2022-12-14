@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export const RightSidebar = () => {
   return (
     <>
@@ -23,7 +25,7 @@ export const RightSidebar = () => {
                 />
               </svg>
             </button>
-            <a href="/">
+            <Link href="/">
             <button className="bg-gray-50 p-2 rounded-md drop-shadow">
               <svg
                 width="28"
@@ -42,7 +44,7 @@ export const RightSidebar = () => {
                 />
               </svg>
             </button>
-            </a>
+            </Link>
           </div>
         </div>
         <div className="flex justify-center mt-16 mb-4">

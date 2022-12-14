@@ -1,13 +1,15 @@
+import Link from "next/link";
+
 export const RegisterForm = () => {
     return (
         <>
-            <div className="p-8 bg-white rounded rounded-lg">
+            <div className="p-8 bg-white rounded rounded-lg h-fit">
                 <h1 className="text-2xl font-bold text-primary font-poppins">Buat Akun Baru</h1>
                 <div className="flex justify-between mb-4">
                     <p>Sudah memiliki akun?</p>
-                    <a href="/login">
+                    <Link href="/login">
                         <p className="text-primary">Masuk</p>
-                    </a>
+                    </Link>
                 </div>
                 <form className="flex-col space-y-4">
                 <div className="flex flex-col space-y-4 sm:space-y-0 sm:space-x-4 sm:flex-row">

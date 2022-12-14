@@ -35,21 +35,21 @@ export const Landing = () => {
                 height="51"
               />
               <div className="mt-4 flex space-x-4">
-                <a href="/register">
+                <Link href="/register">
                   <button className="bg-gradient-to-b from-primary px-12 py-2 h-full to-secondary rounded-full">
                     <p className="text-white hover:text-gray-200 font-medium">
                       Bergabung dengan Kami
                     </p>
                   </button>
-                </a>
+                </Link>
 
-                <a href="/login">
+                <Link href="/login">
                   <button className="bg-gradient-to-b from-primary to-light rounded-full w-18 h-12 p-1 ">
                     <div className="w-full px-8 py-2 bg-white rounded-full hover:bg-light">
                       <p>Masuk</p>
                     </div>
                   </button>
-                </a>
+                </Link>
               </div>
               <SocialMedia />
             </div>
