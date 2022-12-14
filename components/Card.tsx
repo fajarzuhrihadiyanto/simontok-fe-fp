@@ -8,7 +8,7 @@ export const Card = ({ obj }) => {
                 <h1 className="truncate text-sm"> {obj.product_name}</h1>
                 <div className="flex space-x-4">
                     <div className="rounded-lg bg-white p-2 text-xs w-1/2">Stok: {obj.stock}</div>
-                    <button className="rounded-lg bg-secondary p-2 text-xs w-1/2 text-white">Detail</button>
+                    <button className="rounded-lg bg-secondary p-2 text-xs w-1/2 text-white hover:bg-hoversecondary">Detail</button>
                 </div>
             </div>
         </>
