@@ -8,10 +8,11 @@ export const LeftSidebar = () => {
           <Sidebar.Items>
             <Sidebar.ItemGroup>
               <Sidebar.Item href="/dashboard">Dashboard</Sidebar.Item>
-              <Sidebar.Collapse label="Marketplace" className="text-sm">
-                <Sidebar.Item href="#">Marketplace Anda</Sidebar.Item>
-                <Sidebar.Item href="#">Tambah Marketplace</Sidebar.Item>
-              </Sidebar.Collapse>
+              <Sidebar.Item href="/marketplace">Marketplace</Sidebar.Item>
+              {/*<Sidebar.Collapse label="Marketplace" className="text-sm">*/}
+              {/*  <Sidebar.Item href="#">Marketplace Anda</Sidebar.Item>*/}
+              {/*  <Sidebar.Item href="#">Tambah Marketplace</Sidebar.Item>*/}
+              {/*</Sidebar.Collapse>*/}
               <Sidebar.Collapse label="Stok Produk">
                 <Sidebar.Item href="/stok">Lihat Stok</Sidebar.Item>
                 <Sidebar.Item href="/stok/tambahproduk">Tambah Produk</Sidebar.Item>

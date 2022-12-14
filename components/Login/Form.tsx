@@ -1,24 +1,26 @@
+import Link from "next/link";
+
 export const LoginForm = () => {
   return (
     <>
-      <div className="bg-white rounded rounded-lg p-8">
+      <div className="bg-white rounded rounded-lg p-8 h-fit">
         <h1 className="text-2xl font-bold text-primary font-poppins">Masuk</h1>
         <div className="flex justify-between mb-4">
           <p>Belum memiliki akun?</p>
-          <a href="/register">
+          <Link href="/register">
             <p className="text-primary">Daftar</p>
-          </a>
+          </Link>
         </div>
         <form className="flex-col space-y-4">
           <input
             type="email"
-            className="px-4 py-2 w-full rounded-md bg-gray-50"
+            className="p-3 w-full rounded-lg bg-light border border-white"
             placeholder="Email"
             required
           />
           <input
             type="password"
-            className="px-4 py-2 w-full rounded-md bg-gray-50"
+            className="p-3 w-full rounded-lg bg-light border border-white"
             placeholder="Kata Sandi"
             required
           />
@@ -27,11 +29,11 @@ export const LoginForm = () => {
               <input type="checkbox" className="p-2 rounded-md bg-gray-50" />
               <p className="text-gray-500">Ingat saya</p>
             </div>
-            <a href="#" className="text-primary">
+            <Link href="#" className="text-primary">
               Lupa Password?
-            </a>
+            </Link>
           </div>
-          <button className="bg-primary px-4 py-2 w-full rounded-md hover:bg-forhoverprimary">
+          <button className="bg-primary px-4 py-2 w-full rounded-md border border-white hover:bg-forhoverprimary">
             <p className="text-white text-center">Masuk</p>
           </button>
         </form>

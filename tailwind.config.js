@@ -5,6 +5,7 @@ module.exports = {
     "./pages/**/*.{js,ts,jsx,tsx}",
     "./components/**/*.{js,ts,jsx,tsx}",
     "./node_modules/flowbite-react/**/*.js",
+    "./node_modules/flowbite/**/*.js",
   ],
   theme: {
     extend: {
@@ -13,7 +14,8 @@ module.exports = {
         secondary: '#FA896B',
         light: '#F2E8FF',
         slight: '#FEF3F1',
-        forhoverprimary: '#201466'
+        forhoverprimary: '#201466',
+        hoversecondary: '#FF7450'
       }
     },
     fontFamily: {
