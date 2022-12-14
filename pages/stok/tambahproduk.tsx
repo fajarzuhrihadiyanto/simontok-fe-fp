@@ -252,7 +252,9 @@ export default function AddProduct() {
                   </div>
                 </div>
               </div>
-                    <button className="bg-primary w-full p-2.5 text-center rounded-lg text-white mt-4 hover:bg-forhoverprimary">Tambahkan Produk</button>
+              <button className="bg-primary w-full p-2.5 text-center rounded-lg text-white mt-4 hover:bg-forhoverprimary">
+                Tambahkan Produk
+              </button>
             </div>
           </form>
         </PageContainer>
