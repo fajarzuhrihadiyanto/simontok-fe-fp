@@ -33,7 +33,7 @@ export const LoginForm = () => {
               Lupa Password?
             </Link>
           </div>
-          <button className="bg-primary px-4 py-2 w-full rounded-md hover:bg-forhoverprimary">
+          <button className="bg-primary px-4 py-2 w-full rounded-md border border-white hover:bg-forhoverprimary">
             <p className="text-white text-center">Masuk</p>
           </button>
         </form>

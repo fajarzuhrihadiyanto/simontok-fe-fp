@@ -20,7 +20,7 @@ export const RegisterForm = () => {
                     <input type="password" className="w-full p-3 rounded-lg border border-white bg-light" placeholder="Kata Sandi" required/>
                     <p className="mb-6 text-xs text-justify text-gray-400">Dengan mengklik Daftar, Anda menyetujui Ketentuan, Kebijakan Data dan Kebijakan
                         Cookie kami. Anda akan menerima email dari Simontok dan dapat menolaknya kapan saja.</p>
-                    <button className="w-full p-3 rounded-md bg-primary hover:bg-forhoverprimary">
+                    <button className="w-full p-3 rounded-md bg-primary border border-white hover:bg-forhoverprimary">
                         <p className="text-center text-white">Daftar</p>
                     </button>
                 </form>
