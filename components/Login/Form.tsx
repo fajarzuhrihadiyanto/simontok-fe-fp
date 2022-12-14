@@ -14,13 +14,13 @@ export const LoginForm = () => {
         <form className="flex-col space-y-4">
           <input
             type="email"
-            className="px-4 py-2 w-full rounded-md bg-gray-50"
+            className="p-3 w-full rounded-lg bg-light border border-white"
             placeholder="Email"
             required
           />
           <input
             type="password"
-            className="px-4 py-2 w-full rounded-md bg-gray-50"
+            className="p-3 w-full rounded-lg bg-light border border-white"
             placeholder="Kata Sandi"
             required
           />

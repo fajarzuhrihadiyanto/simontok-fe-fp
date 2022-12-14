@@ -33,10 +33,10 @@ export const MainView:React.FC<MainViewProps> = ({ children }) => {
                         <SocialMedia />
                     </div>
                 </div>
-                <div className="flex items-center justify-center w-full h-full md:w-1/2 2xl:py-16 2xl:px-40 bg-light">
+                <div className="flex items-center justify-center w-full h-full md:w-1/2 p-4 md:p-8 2xl:py-16 2xl:px-40 bg-light">
                     <div className="flex flex-col items-center justify-center w-full px-2 py-4 bg-white md:w-fit rounded-xl">
                         <Link href="/">
-                            <h1 className="text-4xl italic font-black text-transparent md:hidden xl:text-8xl font-roboto bg-clip-text bg-gradient-to-b from-primary to-secondary">
+                            <h1 className="text-4xl italic font-black text-transparent mt-4 md:hidden xl:text-8xl font-roboto bg-clip-text bg-gradient-to-b from-primary to-secondary">
                                 Simontok
                             </h1>
                         </Link>
