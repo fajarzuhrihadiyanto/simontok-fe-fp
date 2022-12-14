@@ -1,7 +1,7 @@
 export const LoginForm = () => {
   return (
     <>
-      <div className="bg-white rounded rounded-lg p-8">
+      <div className="bg-white rounded rounded-lg p-8 h-fit">
         <h1 className="text-2xl font-bold text-primary font-poppins">Masuk</h1>
         <div className="flex justify-between mb-4">
           <p>Belum memiliki akun?</p>
