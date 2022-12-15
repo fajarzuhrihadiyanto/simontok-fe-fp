@@ -22,7 +22,8 @@ export const LoginForm = () => {
       setErrorMessage(`Error: ${datas.message}(${datas.code})`);
     }
     if (res.status == 200) {
-      sessionStorage.setItem("smnt-token", data.token);
+      console.log(datas)
+      sessionStorage.setItem("token", datas.data.token);
       Router.push("/dashboard");
     }
   };
