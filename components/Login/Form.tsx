@@ -1,6 +1,34 @@
 import Link from "next/link";
+import { useState } from "react";
+
+import { BACKEND_URL } from '../../config'
 
 export const LoginForm = () => {
+
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+
+  const onSubmit = (e: any) => {
+    e.preventDefault()
+
+    const data = JSON.stringify({
+      email,
+      password
+    })
+    console.log(data)
+
+    fetch(`${BACKEND_URL}/api/login_user`, {
+      method: 'POST',
+      body: data,
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    })
+      .then(response => {
+        console.log(response)
+      })
+  }
+
   return (
     <>
       <div className="bg-white rounded rounded-lg p-8 h-fit">
@@ -16,12 +44,14 @@ export const LoginForm = () => {
             type="email"
             className="p-3 w-full rounded-lg bg-light border border-white"
             placeholder="Email"
+            onChange={e => {setEmail(e.target.value)}}
             required
           />
           <input
             type="password"
             className="p-3 w-full rounded-lg bg-light border border-white"
             placeholder="Kata Sandi"
+            onChange={e => {setPassword(e.target.value)}}
             required
           />
           <div className="flex items-center justify-between">
@@ -33,7 +63,7 @@ export const LoginForm = () => {
               Lupa Password?
             </Link>
           </div>
-          <button className="bg-primary px-4 py-2 w-full rounded-md border border-white hover:bg-forhoverprimary">
+          <button className="bg-primary px-4 py-2 w-full rounded-md border border-white hover:bg-forhoverprimary" onClick={onSubmit}>
             <p className="text-white text-center">Masuk</p>
           </button>
         </form>
