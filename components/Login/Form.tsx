@@ -2,11 +2,13 @@ import Link from "next/link";
 import { useState } from "react";
 
 import { BACKEND_URL } from '../../config'
+import { useRouter } from "next/router";
 
 export const LoginForm = () => {
 
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
+  const router = useRouter()
 
   const onSubmit = (e: any) => {
     e.preventDefault()
@@ -15,17 +17,28 @@ export const LoginForm = () => {
       email,
       password
     })
-    console.log(data)
 
     fetch(`${BACKEND_URL}/api/login_user`, {
       method: 'POST',
       body: data,
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    })
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      })
       .then(response => {
-        console.log(response)
+        return response.json()
+      })
+      .then(data => {
+        if (data.success) {
+          const token = data?.data?.token
+          localStorage.setItem('token', token)
+          router.push('/dashboard')
+        } else {
+          throw Error('not success')
+        }
+      })
+      .catch(e => {
+        console.error(e)
       })
   }
 
