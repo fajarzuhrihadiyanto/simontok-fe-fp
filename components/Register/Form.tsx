@@ -1,6 +1,36 @@
 import Link from "next/link";
+import { useState } from "react";
+import { BACKEND_URL } from "../../config";
 
 export const RegisterForm = () => {
+
+    const [email, setEmail] = useState('')
+    const [password, setPassword] = useState('')
+    const [firstName, setFirstName] = useState('')
+    const [lastName, setLastName] = useState('')
+
+    const onSubmit = (e: any) => {
+        e.preventDefault()
+
+        const data = JSON.stringify({
+            email,
+            password,
+            name: `${firstName} ${lastName}`
+        })
+        console.log(data)
+
+        fetch(`${BACKEND_URL}/api/register_user`, {
+            method: 'POST',
+            body: data,
+            headers: {
+                'Content-Type': 'application/json',
+            },
+        })
+          .then(response => {
+              console.log(response)
+          })
+    }
+
     return (
         <>
             <div className="p-8 bg-white rounded rounded-lg h-fit">
@@ -13,14 +43,14 @@ export const RegisterForm = () => {
                 </div>
                 <form className="flex-col space-y-4">
                 <div className="flex flex-col space-y-4 sm:space-y-0 sm:space-x-4 sm:flex-row">
-                    <input type="text" className="w-full p-3 rounded-lg sm:w-1/2 bg-light border border-white" placeholder="Nama Depan" required/>
-                    <input type="text" className="w-full p-3 rounded-lg sm:w-1/2 bg-light border border-white" placeholder="Nama Belakang" required/>
+                    <input type="text" className="w-full p-3 rounded-lg sm:w-1/2 bg-light border border-white" onChange={e => {setFirstName(e.target.value)}} placeholder="Nama Depan" required/>
+                    <input type="text" className="w-full p-3 rounded-lg sm:w-1/2 bg-light border border-white" onChange={e => {setLastName(e.target.value)}} placeholder="Nama Belakang" required/>
                 </div>
-                    <input type="email" className="w-full p-3 rounded-lg border border-white bg-light" placeholder="Email" required/>
-                    <input type="password" className="w-full p-3 rounded-lg border border-white bg-light" placeholder="Kata Sandi" required/>
+                    <input type="email" className="w-full p-3 rounded-lg border border-white bg-light" placeholder="Email" onChange={e => {setEmail(e.target.value)}} required/>
+                    <input type="password" className="w-full p-3 rounded-lg border border-white bg-light" placeholder="Kata Sandi" onChange={e => {setPassword(e.target.value)}} required/>
                     <p className="mb-6 text-xs text-justify text-gray-400">Dengan mengklik Daftar, Anda menyetujui Ketentuan, Kebijakan Data dan Kebijakan
                         Cookie kami. Anda akan menerima email dari Simontok dan dapat menolaknya kapan saja.</p>
-                    <button className="w-full p-3 rounded-md bg-primary border border-white hover:bg-forhoverprimary">
+                    <button className="w-full p-3 rounded-md bg-primary border border-white hover:bg-forhoverprimary" onClick={onSubmit}>
                         <p className="text-center text-white">Daftar</p>
                     </button>
                 </form>
