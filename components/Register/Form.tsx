@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import { BACKEND_URL } from "../../config";
+import { useRouter } from "next/router";
 
 export const RegisterForm = () => {
 
@@ -8,6 +9,8 @@ export const RegisterForm = () => {
     const [password, setPassword] = useState('')
     const [firstName, setFirstName] = useState('')
     const [lastName, setLastName] = useState('')
+
+    const router = useRouter()
 
     const onSubmit = (e: any) => {
         e.preventDefault()
@@ -17,7 +20,6 @@ export const RegisterForm = () => {
             password,
             name: `${firstName} ${lastName}`
         })
-        console.log(data)
 
         fetch(`${BACKEND_URL}/api/register_user`, {
             method: 'POST',
@@ -26,9 +28,19 @@ export const RegisterForm = () => {
                 'Content-Type': 'application/json',
             },
         })
-          .then(response => {
-              console.log(response)
-          })
+        .then(response => {
+            return response.json()
+        }).then(data => {
+            if (data.success) {
+                console.log(data)
+                router.push('/dashboard')
+            } else {
+                throw Error('not success')
+            }
+        })
+      .catch(e => {
+          console.error(e)
+      })
     }
 
     return (
