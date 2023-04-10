@@ -1,12 +1,40 @@
 import Link from "next/link";
+import React from 'react';
+import { BACKEND_URL } from "../config";
 
 export const RightSidebar = () => {
+
+  const [username, setUsername] = React.useState('')
+  const [joinDate, setJoinDate] = React.useState('')
+
+  React.useEffect(() => {
+    const getUser = async () => {
+
+      const token = localStorage.getItem('token')
+
+      const response = await fetch(`${BACKEND_URL}/api/user`, {
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${token}`
+        },
+      })
+
+      const data = await response.json()
+      console.log(data)
+      setUsername(data.name)
+      const date = new Date(data.created_at)
+      setJoinDate(`${date.toLocaleDateString('en-ID', {month: 'long', year: 'numeric'})}`)
+    }
+
+    getUser()
+  }, [])
+
   return (
     <>
       <div className="fixed right-0 top-0 bottom-0 w-80 py-8 pl-6 pr-8 border-l-2 border-gray-100">
         <div className="flex items-center justify-between">
           <div>
-            <p className="text-sm font-bold text-gray-800">Halo Vania!</p>
+            <p className="text-sm font-bold text-gray-800">Halo {username}</p>
             <p className="text-sm text-gray-800">Selamat Datang</p>
           </div>
 
@@ -65,9 +93,9 @@ export const RightSidebar = () => {
             </svg>
           </button>
         </div>
-        <p className="text-center text-gray-800">Vania Juliana</p>
+        <p className="text-center text-gray-800">{username}</p>
         <p className="text-center text-sm text-gray-600">
-          Bergabung sejak Desember 2022
+          Bergabung sejak {joinDate}
         </p>
         <div className="flex justify-center space-x-4 my-6">
           <button className="py-2 px-4 bg-primary rounded-md">
