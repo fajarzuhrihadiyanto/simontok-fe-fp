@@ -33,7 +33,7 @@ export const RegisterForm = () => {
         }).then(data => {
             if (data.success) {
                 console.log(data)
-                router.push('/dashboard')
+                router.push('/login')
             } else {
                 throw Error('not success')
             }
