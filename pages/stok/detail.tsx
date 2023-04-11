@@ -3,8 +3,19 @@ import { PageContent } from "../../components/PageContent";
 import { stocks } from "../../components/utils/Stock";
 import { Card } from "../../components/Card";
 import { PageContainer } from "../../components/Container";
+import { useRouter } from "next/router";
+import React from "react";
 
 export default function DetailStock() {
+
+  const router = useRouter()
+
+  React.useEffect(() => {
+    const token = localStorage && localStorage.getItem('token')
+    if (!token) {
+      router.push('/login')
+    }
+  }, [])
   return (
     <>
       <LeftSidebar />

@@ -4,6 +4,7 @@ import {Card} from "../../components/Card";
 import { stocks } from "../../components/utils/Stock"
 import React from 'react'
 import { BACKEND_URL } from "../../config";
+import { useRouter } from "next/router";
 
 export default function ViewStock () {
     const [shops, setShops] = React.useState([])
@@ -26,7 +27,15 @@ export default function ViewStock () {
       getShop()
     }, [])
 
-    console.log(shops)
+
+    const router = useRouter()
+
+    React.useEffect(() => {
+      const token = localStorage && localStorage.getItem('token')
+      if (!token) {
+        router.push('/login')
+      }
+    }, [])
 
 
     return (

@@ -2,8 +2,18 @@ import { LeftSidebar } from "../components/LeftSidebar";
 import { Content } from "../components/Dashboard/Content";
 import { RightSidebar } from "../components/RightSidebar";
 import {most_sale_products} from "../components/utils/Product";
+import { useRouter } from "next/router";
+import React from "react";
 
 export default function Dashboard() {
+  const router = useRouter()
+
+  React.useEffect(() => {
+    const token = localStorage && localStorage.getItem('token')
+    if (!token) {
+      router.push('/login')
+    }
+  }, [])
   return (
     <>
       <LeftSidebar />

@@ -2,8 +2,20 @@ import {LeftSidebar} from "../../components/LeftSidebar";
 import {PageContent} from "../../components/PageContent";
 import {Card} from "../../components/Card";
 import { stocks } from "../../components/utils/Stock"
+import { useRouter } from "next/router";
+import React from "react";
 
 export default function ViewStock () {
+
+  const router = useRouter()
+
+  React.useEffect(() => {
+    const token = localStorage && localStorage.getItem('token')
+    if (!token) {
+      router.push('/login')
+    }
+  }, [])
+
     return (
         <>
             <LeftSidebar />

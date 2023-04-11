@@ -1,8 +1,11 @@
 import Link from "next/link";
 import React from 'react';
 import { BACKEND_URL } from "../config";
+import { useRouter } from "next/router";
 
 export const RightSidebar = () => {
+
+  const router = useRouter()
 
   const [username, setUsername] = React.useState('')
   const [joinDate, setJoinDate] = React.useState('')
@@ -29,6 +32,11 @@ export const RightSidebar = () => {
     getUser()
   }, [])
 
+  const onLogout = () => {
+    localStorage.removeItem('token')
+    router.push('/login')
+  }
+
   return (
     <>
       <div className="fixed right-0 top-0 bottom-0 w-80 py-8 pl-6 pr-8 border-l-2 border-gray-100">
@@ -54,7 +62,7 @@ export const RightSidebar = () => {
               </svg>
             </button>
             <Link href="/">
-            <button className="bg-gray-50 p-2 rounded-md drop-shadow">
+            <button className="bg-gray-50 p-2 rounded-md drop-shadow" onClick={onLogout}>
               <svg
                 width="28"
                 height="28"

@@ -42,6 +42,13 @@ export default function AddShop() {
       })
   }
 
+  React.useEffect(() => {
+    const token = localStorage && localStorage.getItem('token')
+    if (!token) {
+      router.push('/login')
+    }
+  }, [])
+
   return (
     <>
       <LeftSidebar />

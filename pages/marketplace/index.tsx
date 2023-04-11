@@ -6,7 +6,7 @@ import { PageContainer } from "../../components/Container";
 import Image from "next/image";
 import { most_sale_products } from "../../components/utils/Product";
 import Link from "next/link";
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { BACKEND_URL } from "../../config";
 import { useRouter } from "next/router";
 
@@ -20,6 +20,15 @@ interface data {
 export default function ViewMarketplace() {
   const [marketplaceData, setMarketplaceData] = useState<data | null>(null);
   const [userId, setUserId] = useState<string | null>(null);
+
+  const router = useRouter()
+
+  React.useEffect(() => {
+    const token = localStorage && localStorage.getItem('token')
+    if (!token) {
+      router.push('/login')
+    }
+  }, [])
 
   useEffect(() => {
     const fetchData = async () => {
